@@ -13,7 +13,12 @@ module Locomotive
       def __attributes__
         %i(name type label hint required localized unique position
           text_formatting select_options
-          target inverse_of order_by ui_enabled default)
+          target inverse_of order_by ui_enabled default group)
+      end
+
+      def group
+        return 'main' if self[:group].nil?
+        self[:group]
       end
 
       def type
